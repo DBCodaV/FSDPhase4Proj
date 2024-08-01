@@ -1,0 +1,21 @@
+version: '3.6'
+
+services:
+  mysql-service:
+    image: mysql:8.0
+    container_name: sql_container
+    environment:
+      - MYSQL_ROOT_PASSWORD=root@123
+      - MYSQL_DATABASE=mydb
+    ports:
+      - 3307:3306
+    restart: always
+  spring-boot-service:
+    build: ./Phase4VetProject
+    container_name: spring_app
+    ports:
+       - 9090:9090
+    depends_on:
+      - mysql-service
+    restart: always
+  
