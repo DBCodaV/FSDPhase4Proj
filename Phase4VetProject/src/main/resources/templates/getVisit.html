@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>View All Visits</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
+
 <body>
-<a href="/">Home</a>
+	<h1>All Pets in Database</h1>
+	<table class="table table-striped">
+		<tr>
+			<th>Visit id</th>
+			<th>Cost</th>
+			<th>Date</th>
+			<th>Pet Name</th>
+		</tr>
+		<tr th:each="v:${visits}">
+			<td th:text="${v.visit_id}"></td>
+			<td th:text="${v.cost}"></td>
+			<td th:text="${v.date}"></td>
+			<td th:text="${v.pet.name}"></td>
+		</tr>
+	</table>
+	<a href="/">Home</a>
 </body>
+
 </html>

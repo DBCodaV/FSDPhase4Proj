@@ -14,12 +14,13 @@ public class Visit {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long visit_id;
 	private float cost;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="id")
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id")
 	private Pet pet;
-	
+
 	private String date;
+
 	public Pet getPet() {
 		return pet;
 	}
@@ -28,12 +29,12 @@ public class Visit {
 		this.pet = pet;
 	}
 
-	public long getId() {
+	public long getVisit_id() {
 		return visit_id;
 	}
 
-	public void setId(long id) {
-		this.visit_id = id;
+	public void setVisit_id(long visit_id) {
+		this.visit_id = visit_id;
 	}
 
 	public String getDate() {
@@ -51,5 +52,5 @@ public class Visit {
 	public void setCost(float cost) {
 		this.cost = cost;
 	}
-	
+
 }

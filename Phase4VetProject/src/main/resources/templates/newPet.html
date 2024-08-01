@@ -15,7 +15,7 @@
         crossorigin="anonymous"></script>
     <div class="container">
         <h1 class="mx-auto text-center">Add a new Pet to the Database</h1>
-        <span th:text ="${msg}"></span>
+        <span th:text="${msg}"></span>
         <div class="container text-center">
             <form action="addPet" method="post" th:object="${pp}" class="form-group">
                 <label>Pet Name</label> <input type="text" name="name" th:field="*{name}" class="form-control" /><br />
